@@ -7,21 +7,20 @@ use Illuminate\Http\Request;
 
 class CarController extends Controller
 {
-    public function show($id)
-    {
-        $car = Car::find($id);
-        return view('cars.show', array('car' => $car));
-    }
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        return view('joshfirst');
+        //
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -31,20 +30,32 @@ class CarController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @return Response
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
         //
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Car  $car
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Car $car)
+    {
+        return view('cars.show', array('car' => $car));
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return Response
+     * @param  \App\Models\Car  $car
+     * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Car $car)
     {
         //
     }
@@ -52,10 +63,11 @@ class CarController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
-     * @return Response
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Car  $car
+     * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request, Car $car)
     {
         //
     }
@@ -63,10 +75,10 @@ class CarController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return Response
+     * @param  \App\Models\Car  $car
+     * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Car $car)
     {
         //
     }
