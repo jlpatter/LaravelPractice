@@ -20,3 +20,5 @@ Route::get('/', function() {
 Route::get('/joshfirst', function() {
     return view('joshfirst');
 });
+
+Route::resource('cars', 'CarController');
